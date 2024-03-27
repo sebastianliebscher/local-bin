@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+case "$1" in lbry*)
+    mpv "$(lbrynet get "$1" | jq -r .streaming_url)"
+esac
+
+case "$1" in http*)
+    mpv "$1"
+esac
