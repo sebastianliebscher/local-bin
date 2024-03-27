@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Compress video
+# pass video file as $1 arg
+
+[ ! -f "$1" ] && printf "The first file should be the video to compress.\\n" && exit
+
+ffmpeg -hide_banner -loglevel warning -stats -i "$1" -crf 28 "${1%.*}.mp4"
