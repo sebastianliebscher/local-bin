@@ -1,0 +1,3 @@
+#!/bin/sh
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNumRenderingThreads=4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -dPrinted=false -sOutputFile="temp-$1" "$1"
+mv "temp-$1" "$1"
