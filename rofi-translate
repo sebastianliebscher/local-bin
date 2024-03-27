@@ -1,0 +1,5 @@
+#!/bin/sh
+# translates text from rofi prompt to clipboard and creates a notfication
+# deps: rofi, rofi-dmenu, libnotify, translate-shell, xclip
+
+notify-send -t 5000 "Translation" "$(trans -b "$(rofi -dmenu -p translate &)" | tr -d '\n' | xclip -sel clip -f)"
